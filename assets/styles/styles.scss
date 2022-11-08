@@ -1,0 +1,371 @@
+@import "variables";
+@import "mixin";
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+html , body{
+    width: 100%;
+
+}
+
+input[type="button"]{
+    cursor: pointer;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    nav{
+        width: 100%;
+        .nav{
+            width: 100%;
+            height: 110px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            padding: 0 150px;
+            background-color: white;
+            @include tablet{
+                width: 100%;
+                padding: 0 0;
+                justify-content:space-between;  // Menu addd
+            }
+
+
+            label{
+                display: none;
+                @include tablet{
+                    display: flex;
+                }
+            }
+            i{
+                display: none;
+                @include tablet{
+                    display: flex;
+                    font-size: 25px;
+                    margin-right: 14px;
+                }
+            }
+
+            .logo{
+                @include tablet{
+                    margin-left: 14px;
+                }
+
+                a{
+                    color: black;
+                h1{
+                    font-size: 24px;
+                    font-weight: 100;
+                    letter-spacing: 3px;
+                    
+                }}
+
+            }
+            .menu{
+                position: relative;
+                
+                ul{
+                    @include tablet{
+                        display: none;
+                    }
+
+                    display: flex;
+    
+                    column-gap: 50px;
+                    
+                    li{
+                        font-size: 20px;
+                        a{
+                            color: black;
+                        }
+                    }
+                }
+                
+                
+            }
+            input{
+                display: none;
+            }
+            input:checked + .res_menu{
+                height: 200px;
+            }
+
+            .res_menu{
+                
+                position: absolute;
+                top: 108px;
+                right: 0;
+                width: 100%;
+                height: 0;
+                padding: 0px 20px;
+                background-color: white;
+                transition: 1s;
+                overflow: hidden;
+                
+                display: flex;
+                justify-content: end;
+                
+                ul{
+                    margin-top: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    row-gap: 10px;
+                    li{
+                        font-size: 30px;
+                        a{
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .background{
+        width: 100%;
+        background: url(https://elvimurshudlu.github.io/Granville/assets/images/bg.jpg);
+        background-size: 100%;
+        position: fixed;
+        background-repeat: repeat;
+        width: 100%;
+        height: 160vh;
+        z-index: -9999;
+        @include mobile{
+            background-size: 242%!important;
+            
+            
+        }
+
+        @include tablet{
+            background-size: 200%;
+        }
+    }
+    main{
+        width: 100%;
+        .main--header{
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+            margin-bottom: 50px;
+            row-gap: 20px;
+
+            @include mobile{
+                height: 65vh;
+                row-gap: 40px;
+            }
+
+            input{
+                padding: 13px 25px;
+                @include mobile{
+                    
+                    font-size: 20px;
+                }
+            }
+            h1{
+                @include mobile{
+                    width: 100%;
+                    font-size: 70px;
+                }
+
+                
+
+
+                font-size: 90px;
+                width: 750px;
+                text-align: center;
+                color: white;
+            }
+        }
+        .store--header{
+            background-color: white;
+            width: 100%;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            row-gap: 40px;
+            align-items: center;
+            justify-content: center;
+
+
+            @include mobile{
+
+                padding: 40px 10px ;
+                height: 100vh;
+            }
+            @include tablet{
+
+                height: 80vh;
+            }
+
+
+            h1{
+                font-size: 40px;
+                width: 70%;
+                text-align: center;
+                @include tablet{
+                    width: 70%;
+                    font-size: 55px;
+                    
+                }
+
+                @include mobile{
+                    width: 100%;
+                    font-size: 40px;
+                }
+            }
+            input{
+                background-color: black;
+                color: white;
+                font-size: 15px;
+                width: 130px;
+                padding: 12px 0;
+                @include tablet{
+                    
+                    font-size: 20px;
+                }
+            }
+        }
+        .shop{
+            width: 100%;
+            padding: 0 0 30px 0;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            column-gap: 20px;
+            row-gap: 30px;
+            flex-wrap: wrap;
+            @include mobile{
+                row-gap: 30px;
+                
+            }
+            @include tablet{
+                row-gap: 30px;
+                height: 130vh;
+            }
+            .card{
+                width: 500px;
+                display: flex;
+                flex-direction: column;
+                row-gap: 30px;
+                @include mobile{
+                    width: 350px;
+                }
+                .image{
+                    width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .text{
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 20px;
+                    align-items: center;
+                    input{
+                        width: 110px;
+                        background-color: black;
+                        color: white;
+                        padding: 10px 20px;
+                        @include tablet{
+                            width: 150px;
+                            padding: 15px 0;
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+        .contact{
+            width: 100%;
+            padding: 100px 0;
+            background-color: #f0dddd;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: 20px;
+            @include mobile{
+               padding: 70px 0;
+            }
+            h1{
+                font-size: 35px;
+                width: 60%;
+                text-align: center;
+
+                @include mobile{
+                    width: 100%;
+                }
+            }
+            input{
+                background-color: black;
+                font-size: 18px;
+                color: white;
+                padding: 10px 10px;
+            }
+        }
+        .footer{
+            background-color: white;
+            padding: 110px 0;
+            display:flex;
+            justify-content: center;
+            column-gap: 140px;
+            flex-wrap: wrap;
+
+            @include tablet{
+                width: 100%;
+                flex-direction: column;
+                padding: 50px 200px;
+            }
+
+            @include mobile{
+                padding: 150px 10px;
+                justify-content: start;
+                row-gap: 40px;
+            }
+
+            &--social{
+                display: flex;
+                flex-direction: column;
+                row-gap: 30px
+                ;
+                &_logo{
+                    display: flex;
+                    column-gap: 30px;
+                    i{
+                        font-size: 25px;
+                    }
+                }
+                h1{
+                    font-size: 30px;
+                    font-weight: 300;
+                    width: 100%;
+                }
+            }
+            &--contact , &--address{
+                h1{
+                    font-weight: 300;
+                    font-size: 30px;
+                    margin-bottom: 30px;
+                }   
+                h4{
+                    font-size: 20px;
+                    font-weight: 100;
+                }
+            }
+            
+        }
+    }
+}
