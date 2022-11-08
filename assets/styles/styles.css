@@ -89,6 +89,9 @@ body nav .nav .menu ul li {
 body nav .nav .menu ul li a {
   color: black;
 }
+body nav .nav .menu ul li:hover {
+  text-decoration: underline;
+}
 body nav .nav input {
   display: none;
 }
